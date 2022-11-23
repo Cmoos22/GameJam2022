@@ -58,3 +58,5 @@ public class SC_CoinCounter : MonoBehaviour
         }
     }
 }
+
+Source for both Scripts = https://sharpcoderblog.com/blog/unity-2d-coin-pickup
