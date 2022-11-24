@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour
     private int prevScene;
 
     //How many seconds till carnage
-    public float delayDelta = 1f;
+    public float delayDelta = 0f;
     //Main Scene
     public string Menu = "Menu";
 
