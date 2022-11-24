@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManagerButtons : MonoBehaviour
+public class TimeManager : MonoBehaviour
 {
     //Order of Scenes
     private int currentScene;
@@ -36,11 +36,11 @@ public class SceneManagerButtons : MonoBehaviour
         {
             SceneManager.LoadScene(Menu);
             Debug.Log("Done");
-        } 
+        }
     }
     public void LoadScene(string scenName)
     {
         SceneManager.LoadScene(scenName);
 
-    } 
+    }
 }
