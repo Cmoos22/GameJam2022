@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 3641544287
+    locked: 0
+  - name: middleground
+    uniqueID: 813877457
+    locked: 0
+  - name: 'before4chareckter '
+    uniqueID: 3584798307
+    locked: 0
