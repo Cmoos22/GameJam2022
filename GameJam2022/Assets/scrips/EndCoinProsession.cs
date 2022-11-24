@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+// part of code soursed : https://sharpcoderblog.com/blog/unity-2d-coin-pickup
+public class EndCoinProsession : MonoBehaviour
+{
+    void Awake()
+    {
+        //Make Collider2D as trigger 
+        GetComponent<Collider2D>().isTrigger = true;
+    }
+    void OnTriggerEnter2D(Collider2D endC)
+    {
+        //Destroy the coin if Object tagged Player comes in contact with it
+        if (endC.CompareTag("Player"))
+        {
+            Debug.Log("you finnished! ");
+            Destroy(gameObject, 0.5f);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("next level");
+        sceneChangerEasy.LoadeNextSceneInGame();
+    }
+}
