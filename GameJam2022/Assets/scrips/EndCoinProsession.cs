@@ -18,6 +18,8 @@ public class EndCoinProsession : MonoBehaviour
         {
             Debug.Log("you finnished! ");
             Destroy(gameObject, 0.5f);
+
+            FindObjectOfType<TimeManager>().LoadScene(Ltwo);
         }
     }
 
