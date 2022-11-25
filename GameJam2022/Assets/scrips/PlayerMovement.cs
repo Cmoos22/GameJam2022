@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     // for relode to menu
-    public string Menu = "Menu";
+    public string lOne = "Level 1";
 
 
 
@@ -71,6 +71,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDestroy()
     {
-        FindObjectOfType<TimeManager>().LoadScene(Menu);
+        FindObjectOfType<TimeManager>().LoadScene(lOne);
     }
 }
