@@ -14,7 +14,6 @@ public class SceneManagerButtons : MonoBehaviour
     public float delayDelta = 1f;
     //Main Scene
     public string Menu = "Menu";
-    public string Demo = "Demo";
 
    
 

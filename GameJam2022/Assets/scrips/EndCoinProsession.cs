@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class EndCoinProsession : MonoBehaviour
 {
     public string EndScene = "End scene";
-    public string LOne = "Level 1";
     void Awake()
     {
         //Make Collider2D as trigger 
@@ -21,7 +20,7 @@ public class EndCoinProsession : MonoBehaviour
             Debug.Log("you finnished! ");
             Destroy(gameObject, 0.5f);
 
-            FindObjectOfType<TimeManager>().LoadScene(LOne);
+            FindObjectOfType<TimeManager>().LoadScene(EndScene);
         }
     }
 
