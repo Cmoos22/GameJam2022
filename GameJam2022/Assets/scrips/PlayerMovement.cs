@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private float horizontal;
-    private float speed = 10f;
+    private float PowerJumpMult = 2.0f;
+    private float speed = 8f;
+    private float speedBoost = 2.0f;
     private float JumpingPower = 11f;
     private bool isFacingRight = true;
+    private bool speedUp = true;
+    private bool PowerJump = true;
 
-    // for relode to menu
-    public string lOne = "Level 1";
 
 
 
@@ -27,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
-        if(!isFacingRight && horizontal > 0f)
+        if (!isFacingRight && horizontal > 0f)
         {
             Flip();
         }
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
         }
 
-        if(context.canceled && rb.velocity.y > 0f)
+        if (context.canceled && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.10f);
         }
@@ -69,8 +71,35 @@ public class PlayerMovement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
     }
 
-    public void OnDestroy()
+    public void SpeedUpEnabled()
     {
-        FindObjectOfType<TimeManager>().LoadScene(lOne);
+        speedUp = true;
+        speed *= speedBoost;
+        StartCoroutine(SpeedUpDisableRoutine());
+    }
+
+    IEnumerator SpeedUpDisableRoutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        speed /= speedBoost;
+    }
+
+    
+    /// <summary>
+    /// Make into Jump power up.
+    /// </summary>
+    public void PowerJumpEnabled()
+    {
+        PowerJump = true;
+        JumpingPower *= PowerJumpMult;
+        StartCoroutine(PowerJumpDisableRoutine());
+    }
+
+    IEnumerator PowerJumpDisableRoutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        JumpingPower /= PowerJumpMult;
     }
 }
