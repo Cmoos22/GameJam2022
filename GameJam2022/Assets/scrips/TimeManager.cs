@@ -14,6 +14,7 @@ public class TimeManager : MonoBehaviour
     public float delayDelta = 0f;
     //Main Scene
     public string Menu = "Menu";
+    
 
     //Time that have passed
     private float timeElapsed;

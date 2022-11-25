@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 // part of code soursed : https://sharpcoderblog.com/blog/unity-2d-coin-pickup
 public class EndCoinProsession : MonoBehaviour
 {
+    public string Ltwo = "Level 2";
     void Awake()
     {
         //Make Collider2D as trigger 
@@ -20,9 +21,6 @@ public class EndCoinProsession : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        Debug.Log("next level");
-        sceneChangerEasy.LoadeNextSceneInGame();
-    }
+
+
 }
