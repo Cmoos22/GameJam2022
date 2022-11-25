@@ -15,7 +15,7 @@ public class SceneManagerButtons : MonoBehaviour
     //Main Scene
     public string Menu = "Menu";
 
-    public string Leveltwo = "Level 2";
+   // public string Leveltwo = "Level 2";
 
     //Time that have passed
     private float timeElapsed;
@@ -41,5 +41,11 @@ public class SceneManagerButtons : MonoBehaviour
             Debug.Log("Done");
         } 
     }
- 
+
+    public void LoadScene(string scenName)
+    {
+        SceneManager.LoadScene(scenName);
+
+    }
+
 }
