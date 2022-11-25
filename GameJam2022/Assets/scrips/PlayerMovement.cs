@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private float JumpingPower = 11f;
     private bool isFacingRight = true;
 
-
+    // for relode to menu
+    public string Menu = "Menu";
 
 
 
@@ -66,5 +67,10 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+    }
+
+    public void OnDestroy()
+    {
+        FindObjectOfType<TimeManager>().LoadScene(Menu);
     }
 }
